@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -7,18 +7,27 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-
-  font-family: Lato, sans-serif;
+  background-color: rgb(223, 223, 223);
+  font-family: 'Comfortaa', cursive;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
+.game-container {
+  width: 630px;
+  height: 560px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
 
 .header {
-  background: dodgerblue;
-
+  background: rgb(89, 8, 136);
+  height: 100px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +35,8 @@ body {
 
 h1 {
   color: white;
-  font-size: 30px;
+  font-size: 28px;
+  text-align: center;
 }
 
 .player-container {
@@ -40,10 +50,29 @@ h2 {
 .far {
   font-size: 50px;
   margin-right: 40px;
+  margin-bottom: 10px;
   User-select: none;
 }
 
+#player .far,
+#player .choice {
+  color: rgb(89, 8, 136);
+  cursor: pointer;
+}
 
+#player .far:last-of-type,
+#computer .far:last-of-type {
+  margin-right: 0;
+}
+
+#computer .far,
+#computer .choice {
+  color: rgb(111, 209, 31);
+}
+
+.selected {
+  color: black !important;
+}
 
 .reset-icon {
   font-size: 30px;
@@ -66,8 +95,8 @@ h2 {
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
   .game-container {
-
-    height: 580px;
+    width: 95%;
+    height: 95%;
   }
 
   h1 {
@@ -91,7 +120,7 @@ h2 {
 /* Media Query: iPhone (Vertical) */
 @media screen and (max-width: 376px) {
   .game-container {
-    height: 550px;
+    height: 95%;
   }
 
   h1 {
@@ -112,5 +141,9 @@ h2 {
 
   .result-container {
     margin: 0 20px;
+  }
+
+  h3 {
+    text-align: center;
   }
 }
