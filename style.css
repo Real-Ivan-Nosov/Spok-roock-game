@@ -39,6 +39,57 @@ h1 {
   text-align: center;
 }
 
+.rules-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.rules-button {
+  cursor: pointer;
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+  outline: none;
+  color: rgb(218, 16, 150);
+  border-radius: 10%;
+  border-color: rgb(209, 147, 31);
+  box-shadow: 0 0 5px 2px rgb(31, 209, 31);
+  background-color: rgb(238, 240, 220);
+}
+
+.popup {
+  width: 95%;
+  height: 95%;
+
+  background-color: pink;
+  border: 3px solid white;
+  border-radius: 10px;
+
+  padding: 20px;
+
+  font-size: 25px;
+}
+
+.popup h4 {
+  text-align: center;
+  font-size: 27px;
+}
+
+.popup .rules {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup .rules .rule .who {
+  color:rgb(70, 31, 209);
+}
+
+.popup .rules .rule .defeats {
+  color: red;
+}
+
 .player-container {
   margin: 50px;
 }

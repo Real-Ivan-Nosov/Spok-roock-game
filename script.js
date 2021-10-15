@@ -1,3 +1,5 @@
+import { startConfetti, stopConfetti, removeConfetti } from "./confetti.js";
+
 const playerScoreEl = document.getElementById('playerScore');
 const playerChoiceEl = document.getElementById('playerChoice');
 const computerScoreEl = document.getElementById('computerScore');
@@ -17,6 +19,10 @@ const computerLizard = document.getElementById('computerLizard');
 const computerSpock = document.getElementById('computerSpock');
 
 const allGameIcons = document.querySelectorAll('.far');
+
+const rulesBtn = document.getElementById('rulesButton');
+const gameContainer = document.getElementById('gameContainer');
+const popup = document.getElementById('popup');
 
 const choices = {
   rock: {
@@ -50,6 +56,8 @@ const resetSelected = () => {
   allGameIcons.forEach((icon) => {
     icon.classList.remove('selected');
   });
+  stopConfetti();
+  removeConfetti();
 }
 
 // Reset Score & playerChoice/computerChoice
@@ -58,11 +66,12 @@ const resetAll = () => {
   computerScoreNumber = 0;
   playerScoreEl.textContent = playerScoreNumber;
   computerScoreEl.textContent = computerScoreNumber;
-  playerChoiceEl = '';
-  computerChoiceEl = '';
+  playerChoiceEl.textContent = '';
+  computerChoiceEl.textContent = '';
   resultText.textContent = '';
   resetSelected();
 }
+window.resetAll = resetAll;
 
 // Random computer choice
 const computerRandomChoice = () => {
@@ -117,6 +126,7 @@ const updateScore = (playerChoice) => {
   } else {
     const choice = choices[playerChoice];
     if (choice.defeats.indexOf(computerChoice) > -1) {
+      startConfetti();
       resultText.textContent = 'Вы победили!';
       playerScoreNumber++;
       playerScoreEl.textContent = playerScoreNumber;
@@ -165,6 +175,21 @@ const select = (playerChoice) => {
       break;
   }
 }
+window.select = select;
+
+// Popup
+const showRules = () => {
+  gameContainer.hidden = true;
+  popup.hidden = false;
+}
+
+const closeRules = () => {
+  popup.hidden = true;
+  gameContainer.hidden = false;
+}
+
+rulesBtn.addEventListener('click', showRules);
+popup.addEventListener('click', closeRules);
 
 // On load
 resetAll();

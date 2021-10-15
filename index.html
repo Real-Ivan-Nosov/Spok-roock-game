@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
+    <div class="game-container" id="gameContainer">
         <!-- Header -->
         <div class="header">
             <h1>Камень Ножницы Бумага Ебака ШАУЕ</h1>
+        </div>
+        <!-- Rules -->
+        <div class="rules-button-container">
+            <button class="rules-button" id="rulesButton">Узнать правила игры</button>
         </div>
         <!-- Player Container -->
         <div class="player-container" id="player">
@@ -39,7 +43,18 @@
             <h3 class="result-text" id="resultText">Вы победили!</h3>
         </div>
     </div>
+    <!-- popup Tutorial -->
+    <div class="popup" id="popup" hidden>
+        <h4>Правила игры</h4>
+        <div class="rules">
+            <p class="rule"><span class="who">Камень</span> бьет <span class="defeats">Ножницы</span> и <span class="defeats">Бумагу</span></p>
+            <p class="rule"><span class="who">Бумага</span> бьет <span class="defeats">Камень</span> и <span class="defeats">ШАУЕ</span></p>
+            <p class="rule"><span class="who">Ножницы</span> бьет <span class="defeats">Бумагу</span> и <span class="defeats">Ебаку</span></p>
+            <p class="rule"><span class="who">Ебака</span> бьет <span class="defeats">Бумагу</span> и <span class="defeats">ШАУЕ</span></p>
+            <p class="rule"><span class="who">ШАУЕ</span> бьет <span class="defeats">Камень</span> и <span class="defeats">Ножницы</span></p>
+        </div>
+    </div>
     <!-- Script -->
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
